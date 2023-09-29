@@ -18,18 +18,13 @@
             <div class="navbar-nav align-items-center">
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                     <li class="nav-item">
-                        <a class="fw-bold nav-link active" th:href="@{'/sitios'}" th:if="${page == 'sitios'}">Sitios</a>
-                        <a class="nav-link" th:href="@{'/sitios'}" th:unless="${page == 'sitios'}">Sitios</a>
+                        <a class="fw-bold nav-link active" th:href="@{'/tecnico'}" th:if="${page == 'tecnicos'}">Técnicos</a>
+                        <a class="nav-link" th:href="@{'/tecnico'}" th:unless="${page == 'tecnicos'}">Técnicos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="fw-bold nav-link active" href="/equipos" th:if="${page == 'equipos'}">Equipos</a>
-                        <a class="nav-link" href="/equipos" th:unless="${page == 'equipos'}">Equipos</a>
+                        <a class="fw-bold nav-link active" href="/estadisticasequipos" th:if="${page == 'estadisticasequipos'}">Estadísticas - Equipos</a>
+                        <a class="nav-link" href="/estadisticasequipos" th:unless="${page == 'estadisticasequipos'}">Estadísticas - Equipos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="fw-bold nav-link active" href="/estadisticas" th:if="${page == 'estadisticas'}">Estadísticas</a>
-                        <a class="nav-link" href="/estadisticas" th:unless="${page == 'estadisticas'}">Estadísticas</a>
-                    </li>
-
                 </ul>
             </div>
 
