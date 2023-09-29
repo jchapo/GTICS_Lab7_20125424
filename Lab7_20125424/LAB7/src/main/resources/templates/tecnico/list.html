@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{fragments/header :: header}"></head>
+    <body>
+        <main>
+            <div class="container px-4 pb-5">
+                <nav th:replace="~{fragments/navbar.html :: navbar}"></nav>
+                <h1 class="pb-2 border-bottom">Lista Técnicos</h1>
+                <a class="btn btn-primary mt-4 mb-4" th:href="@{'/tecnico/new'}">Nuevo Técnicos</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>DNI</th>
+                            <th>Teléfono</th>
+                            <th>Edad</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="tecnico, info : ${listartecnicos}">
+                            <td th:text="${info.index + 1}"></td>
+                            <td th:text="${tecnico.firstName}"></td>
+                            <td th:text="${tecnico.lastName}"></td>
+                            <td th:text="${tecnico.dni}"></td>
+                            <td th:text="${tecnico.phone}"></td>
+                            <td th:text="${tecnico.age}"></td>
+                            <td><a class="btn btn-primary"
+                                   th:href="@{'/tecnico/edit' + '?id=' + ${tecnico.technicianID}}">Editar</a>
+                            </td>
+                            <td><a class="btn btn-danger"
+                                   th:href="@{'/tecnico/delete' + '?id=' + ${tecnico.technicianID}}">Borrar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </body>
+</html>
